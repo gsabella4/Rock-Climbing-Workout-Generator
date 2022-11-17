@@ -4,17 +4,17 @@ public class ClimbingWorkout {
     public static void main(String[] args) {
         Scanner userInput = new Scanner(System.in);
 
-        //TO-DO LIST:
-        // need to account for edge cases, if baseline grade is at the low end or high end, and workout would push index out of bounds, account for error
+        //To-Do:
+        // - exception handling
 
 
         //Arrays to hold grades for both Top Rope and Bouldering. Grade is level of difficult, sorted in ascending order from easy to more difficult
-        String[] topRopeGradeArray = {"5.6", "5.7", "5.8", "5.9", "10a", "10b", "10c", "10d", "11a", "11b", "11c", "11d"};
-        String[] boulderGradeArray = {"VB-","VB", "V0", "V1", "V2", "V3", "V4", "V5", "V6", "V7", "V8", "V9"};
+        String[] topRopeGradeArray = {"5.6", "5.7", "5.8", "5.9", "10a", "10b", "10c", "10d", "11a", "11b", "11c", "11d" ,"12a", "12b", "12c", "12d", "13a", "13b"};
+        String[] boulderGradeArray = {"VB-","VB", "V0", "V1", "V2", "V3", "V4", "V5", "V6", "V7", "V8", "V9", "V10", "V11", "V12"};
 
 
         //Welcome statement, could include some instructions here? anything to greet user, to help positive user experience
-        System.out.println("\n☺・☻・☺・☻・Welcome to the Rock Climbing Workout Generator・☻・☺・☻・☺");
+        System.out.println("\n☺・☻・☺・☻・Welcome to your Rock Climbing Workout Generator・☻・☺・☻・☺");
 
         //Asking for number of routes the user would like to climb, a route is one time up the wall
         System.out.print("\nHow many routes would you like to send today?  ");
@@ -23,20 +23,20 @@ public class ClimbingWorkout {
 
 
         //Type of Climbing: if User selects Top Rope, we'll utilize the top rope grading system, if selection is Bouldering, we'll use the boulder grades
-        System.out.print("\nWhat type of climbing will you be doing? Enter the # next to the type of choice");
-        System.out.println("\n1) Top Rope");
-        System.out.println("2) Bouldering");
+        System.out.println("\nWhat type of climbing will you be doing?");
+        System.out.println("Enter 1 for Top Rope");
+        System.out.println("Enter 2 for Bouldering");
         String climbType = userInput.nextLine();
 
         //baseline is a current performance level, this baseline will serve as a reference point for the route grades assigned in workout
-        System.out.print("\nWhat is your baseline?\tFor Top Rope(grades range from 5.6 to 11d) --- For Bouldering(grades range from VB to V9)  ");
+        System.out.print("\nWhat is your Baseline?\tFor Top Rope(Baselines range from 5.6 to 12d) --- For Bouldering(Baselines range from VB to V10)  ");
         String baseline = userInput.nextLine();
         baseline = baseline.toUpperCase();
 
         //Workout type. Starting with 2 options - more relaxed workout or more difficult workout. Selection will determine deviation from baseline.
-        System.out.println("\nPlease select your workout type. Enter the # next to the workout of choice");
-        System.out.println("\n1) Take it Easy");
-        System.out.println("2) Full Send");
+        System.out.println("\nPlease select your workout type");
+        System.out.println("Enter 1 to Take it Easy");
+        System.out.println("Enter 2 to Full Send");
         String workoutIntensity = userInput.nextLine();
 
         //Map to hold climb# and route grade, will loop through at the end to display workout to the user.
@@ -141,9 +141,10 @@ public class ClimbingWorkout {
         }
         System.out.println("");
 
-        System.out.println("\nYour Workout for the Day. Get After It.\n");
+        System.out.println("\nYour Workout for the Day.");
+        System.out.println("\t  Get After It!\n");
         for (Map.Entry<Integer, String> entry : workoutRoutes.entrySet()) {
-            System.out.println("Climb# " + entry.getKey() + "  :  " + entry.getValue().toString());
+            System.out.println("Climb# " + entry.getKey() + "  :  " + entry.getValue());
         }
     }
 }
