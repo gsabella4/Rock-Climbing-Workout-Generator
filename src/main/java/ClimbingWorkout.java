@@ -6,7 +6,7 @@ public class ClimbingWorkout {
 
         //To-Do:
         // - exception handling for input type checks
-
+        // - write workout to a file, to showcase FileWriter
 
         //Arrays to hold grades for both Top Rope and Bouldering. Grade is level of difficult, sorted in ascending order from easy to more difficult
         String[] topRopeGradeArray = {"5.5", "5.6", "5.7", "5.8", "5.9", "10a", "10b", "10c", "10d", "11a", "11b", "11c", "11d", "12a", "12b", "12c", "12d"};
@@ -16,7 +16,7 @@ public class ClimbingWorkout {
         //Welcome statement, could include some instructions here? anything to greet user, to help positive user experience
         System.out.println("\n☺・☻・☺・☻・Welcome to your Rock Climbing Workout Generator・☻・☺・☻・☺");
 
-        //Asking for number of routes the user would like to climb, a route is one time up the wall
+        //Asking for number of routes the user would like to climb, a route is one time up the wall. A "send" is the term for a completed climb.
         System.out.print("\nHow many routes would you like to send today?  ");
         String routeNumberString = userInput.nextLine();
         int routeNumberValue = Integer.parseInt(routeNumberString);
@@ -31,13 +31,13 @@ public class ClimbingWorkout {
         //baseline is a current performance level, this baseline will serve as a reference point for the route grades assigned in workout
         System.out.print("\nWhat is your Baseline?\tFor Top Rope(Baselines range from 5.5 to 12d) --- For Bouldering(Baselines range from VB to V10)  ");
         String baseline = userInput.nextLine();
-        if (climbType.equals("1")) {
-            baseline = baseline.toLowerCase();
-        } else if (climbType.equals("2")) {
-            baseline = baseline.toUpperCase();
-        }
+            if (climbType.equals("1")) {
+                baseline = baseline.toLowerCase();
+            } else if (climbType.equals("2")) {
+                baseline = baseline.toUpperCase();
+            }
 
-        //Workout type. Starting with 2 options - more relaxed workout or more difficult workout. Selection will determine deviation from baseline.
+        //Workout type. Starting with 2 options - more relaxed workout or a difficult workout (Full Send). Selection will determine deviation from baseline.
         System.out.println("\nPlease select your workout type");
         System.out.println("Enter 1 to Take it Easy");
         System.out.println("Enter 2 to Full Send");
@@ -56,7 +56,7 @@ public class ClimbingWorkout {
                             int randomNumber = new Random().nextInt(2);
                             if (randomNumber == 0) {
                                 workoutRoutes.put(climbNumber, topRopeGradeArray[baselineIndex]);
-                            } else if (randomNumber == 1) {
+                            } else {
                                 workoutRoutes.put(climbNumber, topRopeGradeArray[baselineIndex + 1]);
                             }
                             climbNumber++;
@@ -66,7 +66,7 @@ public class ClimbingWorkout {
                                 workoutRoutes.put(climbNumber, topRopeGradeArray[baselineIndex - 1]);
                             } else if (randomNumber == 1) {
                                 workoutRoutes.put(climbNumber, topRopeGradeArray[baselineIndex]);
-                            } else if (randomNumber == 2) {
+                            } else {
                                 workoutRoutes.put(climbNumber, topRopeGradeArray[baselineIndex + 1]);
                             }
                             climbNumber++;
@@ -76,7 +76,7 @@ public class ClimbingWorkout {
                                 workoutRoutes.put(climbNumber, topRopeGradeArray[baselineIndex - 2]);
                             } else if (randomNumber == 1) {
                                 workoutRoutes.put(climbNumber, topRopeGradeArray[baselineIndex - 1]);
-                            } else if (randomNumber == 2) {
+                            } else {
                                 workoutRoutes.put(climbNumber, topRopeGradeArray[baselineIndex]);
                             }
                             climbNumber++;
@@ -88,7 +88,7 @@ public class ClimbingWorkout {
                                 workoutRoutes.put(climbNumber, topRopeGradeArray[baselineIndex - 1]);
                             } else if (randomNumber == 2) {
                                 workoutRoutes.put(climbNumber, topRopeGradeArray[baselineIndex]);
-                            } else if (randomNumber == 3) {
+                            } else {
                                 workoutRoutes.put(climbNumber, topRopeGradeArray[baselineIndex + 1]);
                             }
                             climbNumber++;
@@ -104,7 +104,7 @@ public class ClimbingWorkout {
                             int randomNumber = new Random().nextInt(2);
                             if (randomNumber == 0) {
                                 workoutRoutes.put(climbNumber, boulderGradeArray[baselineIndex]);
-                            } else if (randomNumber == 1) {
+                            } else {
                                 workoutRoutes.put(climbNumber, boulderGradeArray[baselineIndex + 1]);
                             }
                             climbNumber++;
@@ -114,7 +114,7 @@ public class ClimbingWorkout {
                                 workoutRoutes.put(climbNumber, boulderGradeArray[baselineIndex - 1]);
                             } else if (randomNumber == 1) {
                                 workoutRoutes.put(climbNumber, boulderGradeArray[baselineIndex]);
-                            } else if (randomNumber == 2) {
+                            } else {
                                 workoutRoutes.put(climbNumber, boulderGradeArray[baselineIndex + 1]);
                             }
                             climbNumber++;
@@ -124,7 +124,7 @@ public class ClimbingWorkout {
                                 workoutRoutes.put(climbNumber, boulderGradeArray[baselineIndex - 2]);
                             } else if (randomNumber == 1) {
                                 workoutRoutes.put(climbNumber, boulderGradeArray[baselineIndex - 1]);
-                            } else if (randomNumber == 2) {
+                            } else {
                                 workoutRoutes.put(climbNumber, boulderGradeArray[baselineIndex]);
                             }
                             climbNumber++;
@@ -136,7 +136,7 @@ public class ClimbingWorkout {
                                 workoutRoutes.put(climbNumber, boulderGradeArray[baselineIndex - 1]);
                             } else if (randomNumber == 2) {
                                 workoutRoutes.put(climbNumber, boulderGradeArray[baselineIndex]);
-                            } else if (randomNumber == 3) {
+                            } else {
                                 workoutRoutes.put(climbNumber, boulderGradeArray[baselineIndex + 1]);
                             }
                             climbNumber++;
@@ -155,7 +155,7 @@ public class ClimbingWorkout {
                             int randomNumber = new Random().nextInt(2);
                             if (randomNumber == 0) {
                                 workoutRoutes.put(climbNumber, topRopeGradeArray[baselineIndex]);
-                            } else if (randomNumber == 1) {
+                            } else {
                                 workoutRoutes.put(climbNumber, topRopeGradeArray[baselineIndex + 1]);
                             }
                             climbNumber++;
@@ -165,7 +165,7 @@ public class ClimbingWorkout {
                                 workoutRoutes.put(climbNumber, topRopeGradeArray[baselineIndex]);
                             } else if (randomNumber == 1) {
                                 workoutRoutes.put(climbNumber, topRopeGradeArray[baselineIndex + 1]);
-                            } else if (randomNumber == 2) {
+                            } else {
                                 workoutRoutes.put(climbNumber, topRopeGradeArray[baselineIndex + 2]);
                             }
                             climbNumber++;
@@ -183,7 +183,7 @@ public class ClimbingWorkout {
                             int randomNumber = new Random().nextInt(2);
                             if (randomNumber == 0) {
                                 workoutRoutes.put(climbNumber, boulderGradeArray[baselineIndex]);
-                            } else if (randomNumber == 1) {
+                            } else {
                                 workoutRoutes.put(climbNumber, boulderGradeArray[baselineIndex + 1]);
                             }
                             climbNumber++;
@@ -193,7 +193,7 @@ public class ClimbingWorkout {
                                 workoutRoutes.put(climbNumber, boulderGradeArray[baselineIndex]);
                             } else if (randomNumber == 1) {
                                 workoutRoutes.put(climbNumber, boulderGradeArray[baselineIndex + 1]);
-                            } else if (randomNumber == 2) {
+                            } else {
                                 workoutRoutes.put(climbNumber, boulderGradeArray[baselineIndex + 2]);
                             }
                             climbNumber++;
@@ -201,7 +201,7 @@ public class ClimbingWorkout {
                     }
                 }
             }
-        System.out.println("");
+        System.out.println();
         System.out.println("\nYour Workout for the Day.");
         System.out.println("\t  Get After It!\n");
         for (Map.Entry<Integer, String> entry : workoutRoutes.entrySet()) {
