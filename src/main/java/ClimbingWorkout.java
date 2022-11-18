@@ -14,7 +14,17 @@ public class ClimbingWorkout {
 
 
         //Welcome statement, could include some instructions here? anything to greet user, to help positive user experience
-        System.out.println("\n☺・☻・☺・☻・Welcome to your Rock Climbing Workout Generator・☻・☺・☻・☺");
+        System.out.println("\n☺・☻・☺・☻・Welcome to your Rock Climbing Workout Generator・☻・☺・☻・☺\n");
+
+        System.out.println("          /\\");
+        System.out.println("         /**\\");
+        System.out.println("        /****\\   /\\");
+        System.out.println("       /      \\ /**\\");
+        System.out.println("      /  /\\    /    \\        /\\    /\\  /\\      /\\            /\\/\\/\\  /\\");
+        System.out.println("     /  /  \\  /      \\      /  \\/\\/  \\/  \\  /\\/  \\/\\  /\\  /\\/ / /  \\/  \\");
+        System.out.println("    /  /    \\/ /\\     \\    /    \\ \\  /    \\/ /   /  \\/  \\/  \\  /    \\   \\");
+        System.out.println("   /  /      \\/  \\/\\   \\  /      \\    /   /    \\");
+        System.out.println("__/__/_______/___/__\\___\\__________________________________________________");
 
         //Asking for number of routes the user would like to climb, a route is one time up the wall. A "send" is the term for a completed climb.
         System.out.print("\nHow many routes would you like to send today?  ");
