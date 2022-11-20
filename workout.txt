@@ -6,12 +6,62 @@ Climb#  3  :  V6
 Climb#  4  :  V6               
 Climb#  5  :  V5               
 Climb#  6  :  V3               
+Climb#  7  :  V5
+
+Today's Date: 2022-11-20
+Your workout: 
+Climb#  1  :  V4               
+Climb#  2  :  V4               
+Climb#  3  :  V5               
+Climb#  4  :  V5               
+Climb#  5  :  V5               
+Climb#  6  :  V5               
 Climb#  7  :  V5               
+Climb#  8  :  V5               
+Climb#  9  :  V5               
+Climb# 10  :  V4               
+Climb# 11  :  V5               
+Climb# 12  :  V4               
+Climb# 13  :  V3               
+Climb# 14  :  V3               
+Climb# 15  :  V3               
 
 Today's Date: 2022-11-20
 Your workout: 
 Climb#  1  :  5.7              
-Climb#  2  :  5.8              
+Climb#  2  :  5.6              
 Climb#  3  :  5.7              
-Climb#  4  :  5.8              
-Climb#  5  :  5.9              
+Climb#  4  :  5.5              
+Climb#  5  :  5.7              
+Climb#  6  :  5.5              
+Climb#  7  :  5.7              
+Climb#  8  :  5.7              
+Climb#  9  :  5.6              
+Climb# 10  :  5.6              
+Climb# 11  :  5.6              
+
+Today's Date: 2022-11-20
+Your workout: 
+Climb#  1  :  5.5              
+Climb#  2  :  5.7              
+Climb#  3  :  5.5              
+Climb#  4  :  5.7              
+Climb#  5  :  5.5              
+Climb#  6  :  5.6              
+Climb#  7  :  5.5              
+Climb#  8  :  5.7              
+Climb#  9  :  5.7              
+Climb# 10  :  5.6              
+
+Today's Date: 2022-11-20
+Your workout: 
+Climb#  1  :  5.7              
+Climb#  2  :  5.5              
+Climb#  3  :  5.6              
+Climb#  4  :  5.5              
+Climb#  5  :  5.7              
+Climb#  6  :  5.5              
+Climb#  7  :  5.5              
+Climb#  8  :  5.5              
+Climb#  9  :  5.6              
+Climb# 10  :  5.6              
