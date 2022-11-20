@@ -196,8 +196,8 @@ public class ClimbingWorkout {
                 }
             }
 
-            //print workout w/ current date to existing file workout.txt
-            try (PrintWriter workoutOutput = new PrintWriter(new FileOutputStream("workout.txt", true))) {
+            //print workout w/ current date to existing file log.txt
+            try (PrintWriter workoutOutput = new PrintWriter(new FileOutputStream("log.txt", true))) {
                 UserOutput.outroDisplay();
                 workoutOutput.println("\nToday's Date: " + LocalDate.now() + "\nYour workout: ");
                 for (Map.Entry<Integer, String> entry : workoutRoutes.entrySet()) {
