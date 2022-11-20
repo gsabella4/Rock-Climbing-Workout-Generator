@@ -1,0 +1,17 @@
+Today's Date: 2022-11-20
+Your workout: 
+Climb#  1  :  V5               
+Climb#  2  :  V4               
+Climb#  3  :  V6               
+Climb#  4  :  V6               
+Climb#  5  :  V5               
+Climb#  6  :  V3               
+Climb#  7  :  V5               
+
+Today's Date: 2022-11-20
+Your workout: 
+Climb#  1  :  5.7              
+Climb#  2  :  5.8              
+Climb#  3  :  5.7              
+Climb#  4  :  5.8              
+Climb#  5  :  5.9              
