@@ -51,6 +51,24 @@ public class UserInput {
         return workoutIntensity;
     }
 
+    public static String logWorkoutIntensity(){
+        if (workoutIntensity.equalsIgnoreCase("1")){
+            return "Normal";
+        } else if (workoutIntensity.equalsIgnoreCase("2")){
+            return "Full Send";
+        }
+        return "";
+    }
+
+    public static String logClimbType(){
+        if (climbType.equalsIgnoreCase("1")){
+            return "Top-Rope";
+        } else if (climbType.equalsIgnoreCase("2")){
+            return "Bouldering";
+        }
+        return "";
+    }
+
     public static void anotherWorkoutInput(){
         String response = userInput.nextLine();
         if (response.equalsIgnoreCase("Y")){

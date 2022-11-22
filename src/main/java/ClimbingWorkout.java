@@ -3,7 +3,6 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintWriter;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.*;
 
 public class ClimbingWorkout {
@@ -14,7 +13,9 @@ public class ClimbingWorkout {
             // DONE --- UserInput & UserOutput handling all display and input from user
             // DONE --- write workout to a file, to showcase FileWriter
             // DONE --- options to calc another workout or exit
+            // DONE --- include workout type, climb type, baseline details on log output
             // - exception handling for input type checks
+            // - before workout is displayed, could ask if they want to save to a file? if Y, prompt for existing file to write, if N, display workout w/o writing to log
 
             //Arrays to hold grades for both Top Rope and Bouldering. Grade is level of difficult, sorted in ascending order from easy to more difficult
             String[] topRopeGradeArray = {"5.5", "5.6", "5.7", "5.8", "5.9", "10a", "10b", "10c", "10d", "11a", "11b", "11c", "11d", "12a", "12b", "12c", "12d"};
@@ -195,17 +196,16 @@ public class ClimbingWorkout {
                     }
                 }
             }
-
             //print workout w/ current date to existing file log.txt
             try (PrintWriter workoutOutput = new PrintWriter(new FileOutputStream("log.txt", true))) {
                 UserOutput.outroDisplay();
-                workoutOutput.println("\nToday's Date: " + LocalDate.now() + "\nYour workout: ");
+                workoutOutput.println("\nToday's Date: " + LocalDate.now() + "\n" + UserInput.logClimbType() + "\nBaseline: " + UserInput.getBaseLine() + "\nWorkout Intensity: " + UserInput.logWorkoutIntensity() + "\nYour workout: ");
                 for (Map.Entry<Integer, String> entry : workoutRoutes.entrySet()) {
                     System.out.printf(UserOutput.workoutPrintFormat(), entry.getKey(), entry.getValue());
                     workoutOutput.printf(UserOutput.workoutTextFileFormat(), entry.getKey(), entry.getValue());
                 }
             } catch (FileNotFoundException e) {
-                e.getMessage();
+                System.out.println("File not found");
             }
 
             //prompt user to calculate another workout, if Yes, calls to re-run program. If No, exits program w/ a goodbye message.

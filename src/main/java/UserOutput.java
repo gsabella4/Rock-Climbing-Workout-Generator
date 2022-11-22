@@ -34,8 +34,8 @@ public class UserOutput {
 
     public static void workoutIntensityMenu(){
         System.out.println("\nPlease select your workout type");
-        System.out.println("Enter 1 to Take it Easy");
-        System.out.println("Enter 2 to Full Send");
+        System.out.println("Enter 1 for Normal");
+        System.out.println("Enter 2 for Full Send");
     }
 
     public static void outroDisplay(){

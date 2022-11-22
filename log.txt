@@ -1,76 +1,28 @@
-Today's Date: 2022-11-20
+Today's Date: 2022-11-22
+Bouldering
+Baseline: V2
+Workout Intensity: Full Send
 Your workout: 
-Climb#  1  :  V5               
-Climb#  2  :  V4               
-Climb#  3  :  V6               
-Climb#  4  :  V6               
-Climb#  5  :  V5               
-Climb#  6  :  V3               
-Climb#  7  :  V5
-
-Today's Date: 2022-11-20
-Your workout: 
-Climb#  1  :  V4               
-Climb#  2  :  V4               
-Climb#  3  :  V5               
-Climb#  4  :  V5               
-Climb#  5  :  V5               
-Climb#  6  :  V5               
-Climb#  7  :  V5               
-Climb#  8  :  V5               
-Climb#  9  :  V5               
-Climb# 10  :  V4               
-Climb# 11  :  V5               
-Climb# 12  :  V4               
-Climb# 13  :  V3               
-Climb# 14  :  V3               
-Climb# 15  :  V3               
-
-Today's Date: 2022-11-20
-Your workout: 
-Climb#  1  :  5.7              
-Climb#  2  :  5.6              
-Climb#  3  :  5.7              
-Climb#  4  :  5.5              
-Climb#  5  :  5.7              
-Climb#  6  :  5.5              
-Climb#  7  :  5.7              
-Climb#  8  :  5.7              
-Climb#  9  :  5.6              
-Climb# 10  :  5.6              
-Climb# 11  :  5.6              
-
-Today's Date: 2022-11-20
-Your workout: 
-Climb#  1  :  5.5              
-Climb#  2  :  5.7              
-Climb#  3  :  5.5              
-Climb#  4  :  5.7              
-Climb#  5  :  5.5              
-Climb#  6  :  5.6              
-Climb#  7  :  5.5              
-Climb#  8  :  5.7              
-Climb#  9  :  5.7              
-Climb# 10  :  5.6              
-
-Today's Date: 2022-11-20
-Your workout: 
-Climb#  1  :  5.7              
-Climb#  2  :  5.5              
-Climb#  3  :  5.6              
-Climb#  4  :  5.5              
-Climb#  5  :  5.7              
-Climb#  6  :  5.5              
-Climb#  7  :  5.5              
-Climb#  8  :  5.5              
-Climb#  9  :  5.6              
-Climb# 10  :  5.6              
-
-Today's Date: 2022-11-20
-Your workout: 
-Climb#  1  :  V0               
+Climb#  1  :  V2               
 Climb#  2  :  V2               
-Climb#  3  :  V1               
-Climb#  4  :  V0               
-Climb#  5  :  V2               
-Climb#  6  :  V0               
+Climb#  3  :  V4               
+Climb#  4  :  V2               
+Climb#  5  :  V4               
+Climb#  6  :  V4               
+Climb#  7  :  V4               
+
+Today's Date: 2022-11-22
+Top-Rope
+Baseline: 5.9
+Workout Intensity: Normal
+Your workout: 
+Climb#  1  :  5.9              
+Climb#  2  :  5.7              
+Climb#  3  :  5.7              
+Climb#  4  :  5.7              
+Climb#  5  :  5.8              
+Climb#  6  :  5.9              
+Climb#  7  :  10a              
+Climb#  8  :  5.7              
+Climb#  9  :  10a              
+Climb# 10  :  5.9              
