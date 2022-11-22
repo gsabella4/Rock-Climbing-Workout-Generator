@@ -64,6 +64,7 @@ public class UserOutput {
     }
 
     public static void goodbyeMessage(){
-        System.out.println("\n☆彡*ー*★彡*ー*☆彡 Goodbye! ☆彡*ー*★彡*ー*☆彡");
+        System.out.println("\n          Don't forget your chalk!         ");
+        System.out.println("\n☆彡*ー*★彡*ー*☆彡 Goodbye ☆彡*ー*★彡*ー*☆彡");
     }
 }

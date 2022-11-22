@@ -14,6 +14,7 @@ public class ClimbingWorkout {
             // DONE --- write workout to a file, to showcase FileWriter
             // DONE --- options to calc another workout or exit
             // DONE --- include workout type, climb type, baseline details on log output
+            // - why did I need static everything?
             // - exception handling for input type checks
             // - before workout is displayed, could ask if they want to save to a file? if Y, prompt for existing file to write, if N, display workout w/o writing to log
 

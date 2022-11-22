@@ -26,3 +26,32 @@ Climb#  7  :  10a
 Climb#  8  :  5.7              
 Climb#  9  :  10a              
 Climb# 10  :  5.9              
+
+Today's Date: 2022-11-22
+Top-Rope
+Baseline: 5.9
+Workout Intensity: Full Send
+Your workout: 
+Climb#  1  :  10a              
+Climb#  2  :  10a              
+Climb#  3  :  10b              
+Climb#  4  :  10b              
+Climb#  5  :  10a              
+Climb#  6  :  5.9              
+Climb#  7  :  5.9              
+Climb#  8  :  10b              
+Climb#  9  :  10b              
+Climb# 10  :  5.9              
+
+Today's Date: 2022-11-22
+Top-Rope
+Baseline: 5.7
+Workout Intensity: Normal
+Your workout: 
+Climb#  1  :  5.8              
+Climb#  2  :  5.8              
+Climb#  3  :  5.6              
+Climb#  4  :  5.6              
+Climb#  5  :  5.8              
+Climb#  6  :  5.8              
+Climb#  7  :  5.8              
