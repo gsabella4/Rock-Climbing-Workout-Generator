@@ -51,6 +51,10 @@ public class UserOutput {
         System.out.println("\t☺・☻・☺・☻・☺・☻・☺・☻・☺・☻・☺・☻\n");
     }
 
+    public static void invalidNumberOfRoutesOutput(){
+        System.out.println("\n\tInvalid Input! Please enter a whole Number");
+    }
+
     public static String workoutPrintFormat(){
         return "\t\t\t  Climb# %2s  :  %-17s\n";
     }
