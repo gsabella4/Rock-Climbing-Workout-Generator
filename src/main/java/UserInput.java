@@ -1,5 +1,3 @@
-
-
 import java.util.Scanner;
 
 public class UserInput {
@@ -7,9 +5,9 @@ public class UserInput {
     static Scanner userInput = new Scanner(System.in);
 
     private static int routeNumberValue;
-    private static String climbType;
+    private static int climbType;
     private static String baseLineValue;
-    private static String workoutIntensity;
+    private static int workoutIntensity;
 
 
     public static void numberOfSendsInput(){
@@ -22,18 +20,19 @@ public class UserInput {
     }
 
     public static void climbTypeInput(){
-        climbType = userInput.nextLine();
+        String climbTypeString = userInput.nextLine();
+        climbType = Integer.parseInt(climbTypeString);
     }
 
-    public static String getClimbType(){
+    public static int getClimbType(){
         return climbType;
     }
 
     public static void baseLineInput(){
         String baseline = userInput.nextLine();
-        if (UserInput.getClimbType().equals("1")) {
+        if (UserInput.getClimbType() == 1) {
             baseline = baseline.toLowerCase();
-        } else if (UserInput.getClimbType().equals("2")) {
+        } else if (UserInput.getClimbType() == 2) {
             baseline = baseline.toUpperCase();
         }
         baseLineValue = baseline;
@@ -44,26 +43,27 @@ public class UserInput {
     }
 
     public static void workoutIntensityInput(){
-        workoutIntensity = userInput.nextLine();
+        String workoutIntensityString = userInput.nextLine();
+        workoutIntensity = Integer.parseInt(workoutIntensityString);
     }
 
-    public static String getWorkoutIntensity(){
+    public static int getWorkoutIntensity(){
         return workoutIntensity;
     }
 
     public static String logWorkoutIntensity(){
-        if (workoutIntensity.equalsIgnoreCase("1")){
+        if (workoutIntensity == 1){
             return "Normal";
-        } else if (workoutIntensity.equalsIgnoreCase("2")){
+        } else if (workoutIntensity == 2){
             return "Full Send";
         }
         return "";
     }
 
     public static String logClimbType(){
-        if (climbType.equalsIgnoreCase("1")){
+        if (climbType == 1){
             return "Top-Rope";
-        } else if (climbType.equalsIgnoreCase("2")){
+        } else if (climbType == 2){
             return "Bouldering";
         }
         return "";

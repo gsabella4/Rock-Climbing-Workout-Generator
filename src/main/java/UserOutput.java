@@ -1,7 +1,5 @@
 
 
-
-
 public class UserOutput {
 
     public static void introDisplay(){
@@ -39,20 +37,24 @@ public class UserOutput {
     }
 
     public static void outroDisplay(){
-        System.out.println("\n\t       /\\");
-        System.out.println("\t      /**\\");
-        System.out.println("\t     /****\\");
-        System.out.println("\t    /*/\\***\\");
-        System.out.println("\t   / /**\\   \\  /\\");
-        System.out.println("\t  / /    \\   \\/YY\\");
-        System.out.println("\t /\\ /YYYYYY\\   \\YYY\\");
-        System.out.println("\t/  \\YYYYYYYY\\YYY\\YYY\\");
+        System.out.println("\n\t        /\\");
+        System.out.println("\t         /**\\");
+        System.out.println("\t        /****\\");
+        System.out.println("\t       /*/\\***\\");
+        System.out.println("\t      / /**\\   \\  /\\");
+        System.out.println("\t     / /    \\   \\/YY\\");
+        System.out.println("\t    /\\ /YYYYYY\\   \\YYY\\");
+        System.out.println("\t   /  \\YYYYYYYY\\YYY\\YYY\\");
         System.out.println("\n\n\tYour Workout for the Day. Get After It!");
         System.out.println("\t☺・☻・☺・☻・☺・☻・☺・☻・☺・☻・☺・☻\n");
     }
 
     public static void invalidNumberOfRoutesOutput(){
-        System.out.println("\n\tInvalid Input! Please enter a whole Number");
+        System.out.println("\n\t\tInvalid Input! Please enter a whole Number\n\n");
+    }
+
+    public static void invalidInputMessage(){
+        System.out.println("\n\t\tInvalid Input! Back to Home, and try again.\n\n");
     }
 
     public static String workoutPrintFormat(){

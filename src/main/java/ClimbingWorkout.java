@@ -1,4 +1,3 @@
-
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintWriter;
@@ -16,9 +15,10 @@ public class ClimbingWorkout {
             // DONE --- include workout type, climb type, baseline details on log output
             // - exception handling for input type checks
             // ---- # of routes Exception - DONE
-            // ---- climb type
+            // ---- climb type - DONE
             // ---- baseline input
-            // ---- workout type
+            // ---- workout type - DONE
+            // ---------- can try/catch return back to specific menu? currently returning back to home
 
             //Arrays to hold grades for both Top Rope and Bouldering. Grade is level of difficult, sorted in ascending order from easy to more difficult
             String[] topRopeGradeArray = {"5.5", "5.6", "5.7", "5.8", "5.9", "10a", "10b", "10c", "10d", "11a", "11b", "11c", "11d", "12a", "12b", "12c", "12d"};
@@ -27,14 +27,12 @@ public class ClimbingWorkout {
             //Map to hold climb# and route grade, will loop through at the end to display workout to the user.
             Map<Integer, String> workoutRoutes = new HashMap<>();
 
-            //Welcome statement, could include some instructions here? anything to greet user, to help positive user experience
-            UserOutput.introDisplay();
-
             while (true) {
+                //Welcome statement, could include some instructions here? anything to greet user, to help positive user experience
+                UserOutput.introDisplay();
 
                 //Asking for number of routes the user would like to climb, a route is one time up the wall. A "send" is the term for a completed climb.
                 UserOutput.numberOfSendsPrompt();
-
                 //if user enters anything other than integer, will receive Invalid Input message and return to home
                 try {
                     UserInput.numberOfSendsInput();
@@ -42,21 +40,32 @@ public class ClimbingWorkout {
                     UserOutput.invalidNumberOfRoutesOutput();
                     continue;
                 }
-
                 //Type of Climbing: if User selects Top Rope, we'll utilize the top rope grading system, if selection is Bouldering, we'll use the boulder grades
                 UserOutput.climbTypeMenu();
-                UserInput.climbTypeInput();
-
+                //if user enters anything other than 1 or 2, will receive Invalid Input message and return to home
+                try {
+                    UserInput.climbTypeInput();
+                } catch (IllegalArgumentException e) {
+                    UserOutput.invalidInputMessage();
+                    continue;
+                }
                 //baseline is a current performance level, this baseline will serve as a reference point for the route grades assigned in workout
                 UserOutput.baseLinePrompt();
                 UserInput.baseLineInput();
 
+
                 //Workout type. Starting with 2 options - more relaxed workout or a difficult workout (Full Send). Selection will determine deviation from baseline.
                 UserOutput.workoutIntensityMenu();
-                UserInput.workoutIntensityInput();
+                //if user enters anything other than 1 or 2, will receive Invalid Input message and return to home
+                try {
+                    UserInput.workoutIntensityInput();
+                } catch (IllegalArgumentException e) {
+                    UserOutput.invalidInputMessage();
+                    continue;
+                }
 
-                if (UserInput.getWorkoutIntensity().equals("1")) {
-                    if (UserInput.getClimbType().equals("1")) {
+                if (UserInput.getWorkoutIntensity() == 1) {
+                    if (UserInput.getClimbType() == 1) {
                         int baselineIndex = Arrays.asList(topRopeGradeArray).indexOf(UserInput.getBaseLine());
                         int climbNumber = 1;
                         for (int i = 1; i <= UserInput.getRouteNumber(); i++) {/*Climbing grades are exponentially difficult, if user's baseline is among
@@ -103,7 +112,7 @@ public class ClimbingWorkout {
                                 climbNumber++;
                             }
                         }
-                    } else if (UserInput.getClimbType().equals("2")) {
+                    } else if (UserInput.getClimbType() == 2) {
                         int baselineIndex = Arrays.asList(boulderGradeArray).indexOf(UserInput.getBaseLine());
                         int climbNumber = 1;
                         for (int i = 1; i <= UserInput.getRouteNumber(); i++) {/*Climbing grades are exponentially difficult, if user's baseline is among
@@ -151,8 +160,8 @@ public class ClimbingWorkout {
                             }
                         }
                     }
-                } else if (UserInput.getWorkoutIntensity().equals("2")) {
-                    if (UserInput.getClimbType().equals("1")) {
+                } else if (UserInput.getWorkoutIntensity() == 2) {
+                    if (UserInput.getClimbType() == 1) {
                         int baselineIndex = Arrays.asList(topRopeGradeArray).indexOf(UserInput.getBaseLine());
                         int climbNumber = 1;
                         for (int i = 1; i <= UserInput.getRouteNumber(); i++) {
@@ -179,7 +188,7 @@ public class ClimbingWorkout {
                                 climbNumber++;
                             }
                         }
-                    } else if (UserInput.getClimbType().equals("2")) {
+                    } else if (UserInput.getClimbType() == 2) {
                         int baselineIndex = Arrays.asList(boulderGradeArray).indexOf(UserInput.getBaseLine());
                         int climbNumber = 1;
                         for (int i = 1; i <= UserInput.getRouteNumber(); i++) {
@@ -222,7 +231,7 @@ public class ClimbingWorkout {
                 }
 
                 //prompt user to calculate another workout, if Yes, calls to re-run program. If No, exits program w/ a goodbye message.
-                UserOutput.anotherWorkoutPrompt();
+                // UserOutput.anotherWorkoutPrompt();
                 UserInput.anotherWorkoutInput();
             }
         }
