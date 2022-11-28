@@ -16,9 +16,9 @@ public class ClimbingWorkout {
             // - exception handling for input type checks
             // ---- # of routes Exception - DONE
             // ---- climb type - DONE
-            // ---- baseline input
             // ---- workout type - DONE
-            // ---------- can try/catch return back to specific menu? currently returning back to home
+            // ---- baseline input - need custom exception
+            // ---- can try/catch return back to specific menu? returns to home currently
 
             //Arrays to hold grades for both Top Rope and Bouldering. Grade is level of difficult, sorted in ascending order from easy to more difficult
             String[] topRopeGradeArray = {"5.5", "5.6", "5.7", "5.8", "5.9", "10a", "10b", "10c", "10d", "11a", "11b", "11c", "11d", "12a", "12b", "12c", "12d"};
@@ -26,6 +26,8 @@ public class ClimbingWorkout {
 
             //Map to hold climb# and route grade, will loop through at the end to display workout to the user.
             Map<Integer, String> workoutRoutes = new HashMap<>();
+
+
 
             while (true) {
                 //Welcome statement, could include some instructions here? anything to greet user, to help positive user experience
@@ -231,7 +233,7 @@ public class ClimbingWorkout {
                 }
 
                 //prompt user to calculate another workout, if Yes, calls to re-run program. If No, exits program w/ a goodbye message.
-                // UserOutput.anotherWorkoutPrompt();
+                UserOutput.anotherWorkoutPrompt();
                 UserInput.anotherWorkoutInput();
             }
         }

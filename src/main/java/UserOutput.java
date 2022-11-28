@@ -37,14 +37,6 @@ public class UserOutput {
     }
 
     public static void outroDisplay(){
-        System.out.println("\n\t        /\\");
-        System.out.println("\t         /**\\");
-        System.out.println("\t        /****\\");
-        System.out.println("\t       /*/\\***\\");
-        System.out.println("\t      / /**\\   \\  /\\");
-        System.out.println("\t     / /    \\   \\/YY\\");
-        System.out.println("\t    /\\ /YYYYYY\\   \\YYY\\");
-        System.out.println("\t   /  \\YYYYYYYY\\YYY\\YYY\\");
         System.out.println("\n\n\tYour Workout for the Day. Get After It!");
         System.out.println("\t☺・☻・☺・☻・☺・☻・☺・☻・☺・☻・☺・☻\n");
     }

@@ -53,3 +53,68 @@ Climb#  4  :  5.9
 Climb#  5  :  5.8              
 Climb#  6  :  5.9              
 Climb#  7  :  5.7              
+
+Today's Date: 2022-11-28
+Top-Rope
+Baseline: 5.9
+Workout Type: Normal
+Your workout: 
+Climb#  1  :  5.7              
+Climb#  2  :  5.9              
+Climb#  3  :  5.7              
+Climb#  4  :  5.9              
+Climb#  5  :  5.8              
+Climb#  6  :  10a              
+Climb#  7  :  5.8              
+
+Today's Date: 2022-11-28
+Top-Rope
+Baseline: 5.9
+Workout Type: Normal
+Your workout: 
+Climb#  1  :  5.8              
+Climb#  2  :  10a              
+Climb#  3  :  5.9              
+Climb#  4  :  10a              
+Climb#  5  :  5.7              
+Climb#  6  :  5.8              
+Climb#  7  :  5.9              
+
+Today's Date: 2022-11-28
+Top-Rope
+Baseline: 5.9
+Workout Type: Normal
+Your workout: 
+Climb#  1  :  5.7              
+Climb#  2  :  5.7              
+Climb#  3  :  5.9              
+Climb#  4  :  5.7              
+Climb#  5  :  5.8              
+Climb#  6  :  10a              
+Climb#  7  :  5.7              
+
+Today's Date: 2022-11-28
+Top-Rope
+Baseline: 5.9
+Workout Type: Normal
+Your workout: 
+Climb#  1  :  10a              
+Climb#  2  :  5.9              
+Climb#  3  :  5.9              
+Climb#  4  :  5.9              
+Climb#  5  :  10a              
+Climb#  6  :  5.7              
+Climb#  7  :  10a              
+
+Today's Date: 2022-11-28
+Top-Rope
+Baseline: 5.9
+Workout Type: Normal
+Your workout: 
+Climb#  1  :  5.9              
+Climb#  2  :  10a              
+Climb#  3  :  5.8              
+Climb#  4  :  5.9              
+Climb#  5  :  5.7              
+Climb#  6  :  5.8              
+Climb#  7  :  5.7              
