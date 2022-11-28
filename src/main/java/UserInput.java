@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class UserInput {
@@ -8,6 +11,9 @@ public class UserInput {
     private static int climbType;
     private static String baseLineValue;
     private static int workoutIntensity;
+    //Arrays to hold grades for both Top Rope and Bouldering. Grade is level of difficult, sorted in ascending order from easy to more difficult
+    public static String[] topRopeGradeArray = {"5.5", "5.6", "5.7", "5.8", "5.9", "10a", "10b", "10c", "10d", "11a", "11b", "11c", "11d", "12a", "12b", "12c", "12d"};
+    public static String[] boulderGradeArray = {"VB", "V0", "V1", "V2", "V3", "V4", "V5", "V6", "V7", "V8", "V9", "V10"};
 
 
     public static void numberOfSendsInput(){
@@ -28,18 +34,43 @@ public class UserInput {
         return climbType;
     }
 
-    public static void baseLineInput(){
+    // this method will take user's input for their baseline grade, check if that grade is 1) valid and 2) that grade exists in current range, if not, throws custom exception InvalidGradeException
+    public static void baseLineInput() throws InvalidGradeException {
         String baseline = userInput.nextLine();
-        if (UserInput.getClimbType() == 1) {
-            baseline = baseline.toLowerCase();
-        } else if (UserInput.getClimbType() == 2) {
-            baseline = baseline.toUpperCase();
-        }
+        if (climbType == 1) {
+            List<String> topRopeList = new ArrayList<>(Arrays.asList(topRopeGradeArray));
+            if (topRopeList.contains(baseline.toLowerCase())){
+                    baseline = baseline.toLowerCase();
+                }
+                else {
+                    throw new InvalidGradeException("\n\tYou must enter a valid top-rope grade! Returning back to home.");
+                }
+            }
+         else if (climbType == 2) {
+            List<String> boulderList = new ArrayList<>(Arrays.asList(boulderGradeArray));
+            if (boulderList.contains(baseline.toUpperCase())){
+                baseline = baseline.toUpperCase();
+            }
+                else {
+                    throw new InvalidGradeException("\n\tYou must enter a valid Boulder grade! Returning back to home.");
+                }
+            }
         baseLineValue = baseline;
     }
 
     public static String getBaseLine(){
         return baseLineValue;
+    }
+
+    // this method returns the index of user's baseline grade in either top-rope or boulder grades
+    public static int getBaseLineIndex(){
+        int baselineIndex = 0;
+        if (climbType == 1) {
+            baselineIndex = Arrays.asList(topRopeGradeArray).indexOf(getBaseLine());
+        } else if (climbType == 2){
+            baselineIndex = Arrays.asList(boulderGradeArray).indexOf(getBaseLine());
+        }
+        return baselineIndex;
     }
 
     public static void workoutIntensityInput(){
@@ -51,6 +82,7 @@ public class UserInput {
         return workoutIntensity;
     }
 
+    // implemented when logging to log.txt file to print workout type
     public static String logWorkoutIntensity(){
         if (workoutIntensity == 1){
             return "Normal";
@@ -60,6 +92,7 @@ public class UserInput {
         return "";
     }
 
+    // implemented when logging to log.txt file to print climb type
     public static String logClimbType(){
         if (climbType == 1){
             return "Top-Rope";
@@ -69,6 +102,7 @@ public class UserInput {
         return "";
     }
 
+    // after displaying workout to user & logging to file, this method will give the user an option to run through again(Y) or exit the program(N)
     public static void anotherWorkoutInput(){
         String response = userInput.nextLine();
         if (response.equalsIgnoreCase("Y")){

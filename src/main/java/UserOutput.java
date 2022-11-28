@@ -3,7 +3,7 @@
 public class UserOutput {
 
     public static void introDisplay(){
-        System.out.println("\n☺・☻・☺・☻・Welcome to the Rock Climbing Workout Generator・☻・☺・☻・☺\n");
+        System.out.println("\n\n☺・☻・☺・☻・Welcome to the Rock Climbing Workout Generator・☻・☺・☻・☺\n");
 
         System.out.println("          /\\");
         System.out.println("         /**\\");

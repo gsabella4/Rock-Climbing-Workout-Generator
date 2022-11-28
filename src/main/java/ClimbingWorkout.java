@@ -13,20 +13,16 @@ public class ClimbingWorkout {
             // DONE --- write workout to a file, to showcase FileWriter
             // DONE --- options to calc another workout or exit
             // DONE --- include workout type, climb type, baseline details on log output
-            // - exception handling for input type checks
+            // DONE - exception handling for input type checks
             // ---- # of routes Exception - DONE
             // ---- climb type - DONE
             // ---- workout type - DONE
-            // ---- baseline input - need custom exception
+            // ---- baseline input customer exception - DONE
             // ---- can try/catch return back to specific menu? returns to home currently
-
-            //Arrays to hold grades for both Top Rope and Bouldering. Grade is level of difficult, sorted in ascending order from easy to more difficult
-            String[] topRopeGradeArray = {"5.5", "5.6", "5.7", "5.8", "5.9", "10a", "10b", "10c", "10d", "11a", "11b", "11c", "11d", "12a", "12b", "12c", "12d"};
-            String[] boulderGradeArray = {"VB", "V0", "V1", "V2", "V3", "V4", "V5", "V6", "V7", "V8", "V9", "V10"};
+            // - Make sense to store top-rope/boulder grades in list vs Array?
 
             //Map to hold climb# and route grade, will loop through at the end to display workout to the user.
             Map<Integer, String> workoutRoutes = new HashMap<>();
-
 
 
             while (true) {
@@ -35,31 +31,38 @@ public class ClimbingWorkout {
 
                 //Asking for number of routes the user would like to climb, a route is one time up the wall. A "send" is the term for a completed climb.
                 UserOutput.numberOfSendsPrompt();
-                //if user enters anything other than integer, will receive Invalid Input message and return to home
                 try {
+                    //if user enters anything other than integer, will receive Invalid Input message and return to home
                     UserInput.numberOfSendsInput();
                 } catch (IllegalArgumentException e) {
                     UserOutput.invalidNumberOfRoutesOutput();
                     continue;
                 }
+
                 //Type of Climbing: if User selects Top Rope, we'll utilize the top rope grading system, if selection is Bouldering, we'll use the boulder grades
                 UserOutput.climbTypeMenu();
-                //if user enters anything other than 1 or 2, will receive Invalid Input message and return to home
                 try {
+                    //if user enters anything other than 1 or 2, will receive Invalid Input message and return to home
                     UserInput.climbTypeInput();
                 } catch (IllegalArgumentException e) {
                     UserOutput.invalidInputMessage();
                     continue;
                 }
+
                 //baseline is a current performance level, this baseline will serve as a reference point for the route grades assigned in workout
                 UserOutput.baseLinePrompt();
-                UserInput.baseLineInput();
-
+                try {
+                    //if user input is not within the current baseline specs in UserInput class, the baseLineInput() method throws custom exception
+                    UserInput.baseLineInput();
+                } catch (InvalidGradeException e) {
+                    System.out.println(e.getMessage());
+                    continue;
+                }
 
                 //Workout type. Starting with 2 options - more relaxed workout or a difficult workout (Full Send). Selection will determine deviation from baseline.
                 UserOutput.workoutIntensityMenu();
-                //if user enters anything other than 1 or 2, will receive Invalid Input message and return to home
                 try {
+                    //if user enters anything other than 1 or 2, will receive Invalid Input message and return to home
                     UserInput.workoutIntensityInput();
                 } catch (IllegalArgumentException e) {
                     UserOutput.invalidInputMessage();
@@ -68,95 +71,93 @@ public class ClimbingWorkout {
 
                 if (UserInput.getWorkoutIntensity() == 1) {
                     if (UserInput.getClimbType() == 1) {
-                        int baselineIndex = Arrays.asList(topRopeGradeArray).indexOf(UserInput.getBaseLine());
                         int climbNumber = 1;
                         for (int i = 1; i <= UserInput.getRouteNumber(); i++) {/*Climbing grades are exponentially difficult, if user's baseline is among
                                               the first 2 grades, the workout can include -1 baseline at the easiest unless baseline is the lowest grade*/
-                            if (baselineIndex == 0) {
+                            if (UserInput.getBaseLineIndex() == 0) {
                                 int randomNumber = new Random().nextInt(2);
                                 if (randomNumber == 0) {
-                                    workoutRoutes.put(climbNumber, topRopeGradeArray[baselineIndex]);
+                                    workoutRoutes.put(climbNumber, UserInput.topRopeGradeArray[UserInput.getBaseLineIndex()]);
                                 } else {
-                                    workoutRoutes.put(climbNumber, topRopeGradeArray[baselineIndex + 1]);
+                                    workoutRoutes.put(climbNumber, UserInput.topRopeGradeArray[UserInput.getBaseLineIndex() + 1]);
                                 }
                                 climbNumber++;
-                            } else if (baselineIndex <= 2) {
+                            } else if (UserInput.getBaseLineIndex() <= 2) {
                                 int randomNumber = new Random().nextInt(3);
                                 if (randomNumber == 0) {
-                                    workoutRoutes.put(climbNumber, topRopeGradeArray[baselineIndex - 1]);
+                                    workoutRoutes.put(climbNumber, UserInput.topRopeGradeArray[UserInput.getBaseLineIndex() - 1]);
                                 } else if (randomNumber == 1) {
-                                    workoutRoutes.put(climbNumber, topRopeGradeArray[baselineIndex]);
+                                    workoutRoutes.put(climbNumber, UserInput.topRopeGradeArray[UserInput.getBaseLineIndex()]);
                                 } else {
-                                    workoutRoutes.put(climbNumber, topRopeGradeArray[baselineIndex + 1]);
+                                    workoutRoutes.put(climbNumber, UserInput.topRopeGradeArray[UserInput.getBaseLineIndex() + 1]);
                                 }
                                 climbNumber++;
-                            } else if (baselineIndex == topRopeGradeArray.length - 1) {
+                            } else if (UserInput.getBaseLineIndex() == UserInput.topRopeGradeArray.length - 1) {
                                 int randomNumber = new Random().nextInt(3);
                                 if (randomNumber == 0) {
-                                    workoutRoutes.put(climbNumber, topRopeGradeArray[baselineIndex - 2]);
+                                    workoutRoutes.put(climbNumber, UserInput.topRopeGradeArray[UserInput.getBaseLineIndex() - 2]);
                                 } else if (randomNumber == 1) {
-                                    workoutRoutes.put(climbNumber, topRopeGradeArray[baselineIndex - 1]);
+                                    workoutRoutes.put(climbNumber, UserInput.topRopeGradeArray[UserInput.getBaseLineIndex() - 1]);
                                 } else {
-                                    workoutRoutes.put(climbNumber, topRopeGradeArray[baselineIndex]);
+                                    workoutRoutes.put(climbNumber, UserInput.topRopeGradeArray[UserInput.getBaseLineIndex()]);
                                 }
                                 climbNumber++;
                             } else {
                                 int randomNumber = new Random().nextInt(4);
                                 if (randomNumber == 0) {
-                                    workoutRoutes.put(climbNumber, topRopeGradeArray[baselineIndex - 2]);
+                                    workoutRoutes.put(climbNumber, UserInput.topRopeGradeArray[UserInput.getBaseLineIndex() - 2]);
                                 } else if (randomNumber == 1) {
-                                    workoutRoutes.put(climbNumber, topRopeGradeArray[baselineIndex - 1]);
+                                    workoutRoutes.put(climbNumber, UserInput.topRopeGradeArray[UserInput.getBaseLineIndex() - 1]);
                                 } else if (randomNumber == 2) {
-                                    workoutRoutes.put(climbNumber, topRopeGradeArray[baselineIndex]);
+                                    workoutRoutes.put(climbNumber, UserInput.topRopeGradeArray[UserInput.getBaseLineIndex()]);
                                 } else {
-                                    workoutRoutes.put(climbNumber, topRopeGradeArray[baselineIndex + 1]);
+                                    workoutRoutes.put(climbNumber, UserInput.topRopeGradeArray[UserInput.getBaseLineIndex() + 1]);
                                 }
                                 climbNumber++;
                             }
                         }
                     } else if (UserInput.getClimbType() == 2) {
-                        int baselineIndex = Arrays.asList(boulderGradeArray).indexOf(UserInput.getBaseLine());
                         int climbNumber = 1;
                         for (int i = 1; i <= UserInput.getRouteNumber(); i++) {/*Climbing grades are exponentially difficult, if user's baseline is among
                                               the first 2 grades, the workout can include -1 baseline at the easiest unless baseline is the lowest grade*/
-                            if (baselineIndex == 0) {
+                            if (UserInput.getBaseLineIndex() == 0) {
                                 int randomNumber = new Random().nextInt(2);
                                 if (randomNumber == 0) {
-                                    workoutRoutes.put(climbNumber, boulderGradeArray[baselineIndex]);
+                                    workoutRoutes.put(climbNumber, UserInput.boulderGradeArray[UserInput.getBaseLineIndex()]);
                                 } else {
-                                    workoutRoutes.put(climbNumber, boulderGradeArray[baselineIndex + 1]);
+                                    workoutRoutes.put(climbNumber, UserInput.boulderGradeArray[UserInput.getBaseLineIndex() + 1]);
                                 }
                                 climbNumber++;
-                            } else if (baselineIndex <= 2) {
+                            } else if (UserInput.getBaseLineIndex() <= 2) {
                                 int randomNumber = new Random().nextInt(3);
                                 if (randomNumber == 0) {
-                                    workoutRoutes.put(climbNumber, boulderGradeArray[baselineIndex - 1]);
+                                    workoutRoutes.put(climbNumber, UserInput.boulderGradeArray[UserInput.getBaseLineIndex() - 1]);
                                 } else if (randomNumber == 1) {
-                                    workoutRoutes.put(climbNumber, boulderGradeArray[baselineIndex]);
+                                    workoutRoutes.put(climbNumber, UserInput.boulderGradeArray[UserInput.getBaseLineIndex()]);
                                 } else {
-                                    workoutRoutes.put(climbNumber, boulderGradeArray[baselineIndex + 1]);
+                                    workoutRoutes.put(climbNumber, UserInput.boulderGradeArray[UserInput.getBaseLineIndex() + 1]);
                                 }
                                 climbNumber++;
-                            } else if (baselineIndex == (boulderGradeArray.length - 1)) {
+                            } else if (UserInput.getBaseLineIndex() == (UserInput.boulderGradeArray.length - 1)) {
                                 int randomNumber = new Random().nextInt(3);
                                 if (randomNumber == 0) {
-                                    workoutRoutes.put(climbNumber, boulderGradeArray[baselineIndex - 2]);
+                                    workoutRoutes.put(climbNumber, UserInput.boulderGradeArray[UserInput.getBaseLineIndex() - 2]);
                                 } else if (randomNumber == 1) {
-                                    workoutRoutes.put(climbNumber, boulderGradeArray[baselineIndex - 1]);
+                                    workoutRoutes.put(climbNumber, UserInput.boulderGradeArray[UserInput.getBaseLineIndex() - 1]);
                                 } else {
-                                    workoutRoutes.put(climbNumber, boulderGradeArray[baselineIndex]);
+                                    workoutRoutes.put(climbNumber, UserInput.boulderGradeArray[UserInput.getBaseLineIndex()]);
                                 }
                                 climbNumber++;
                             } else {
                                 int randomNumber = new Random().nextInt(4);
                                 if (randomNumber == 0) {
-                                    workoutRoutes.put(climbNumber, boulderGradeArray[baselineIndex - 2]);
+                                    workoutRoutes.put(climbNumber, UserInput.boulderGradeArray[UserInput.getBaseLineIndex() - 2]);
                                 } else if (randomNumber == 1) {
-                                    workoutRoutes.put(climbNumber, boulderGradeArray[baselineIndex - 1]);
+                                    workoutRoutes.put(climbNumber, UserInput.boulderGradeArray[UserInput.getBaseLineIndex() - 1]);
                                 } else if (randomNumber == 2) {
-                                    workoutRoutes.put(climbNumber, boulderGradeArray[baselineIndex]);
+                                    workoutRoutes.put(climbNumber, UserInput.boulderGradeArray[UserInput.getBaseLineIndex()]);
                                 } else {
-                                    workoutRoutes.put(climbNumber, boulderGradeArray[baselineIndex + 1]);
+                                    workoutRoutes.put(climbNumber, UserInput.boulderGradeArray[UserInput.getBaseLineIndex() + 1]);
                                 }
                                 climbNumber++;
                             }
@@ -164,55 +165,53 @@ public class ClimbingWorkout {
                     }
                 } else if (UserInput.getWorkoutIntensity() == 2) {
                     if (UserInput.getClimbType() == 1) {
-                        int baselineIndex = Arrays.asList(topRopeGradeArray).indexOf(UserInput.getBaseLine());
                         int climbNumber = 1;
                         for (int i = 1; i <= UserInput.getRouteNumber(); i++) {
-                            if (baselineIndex == topRopeGradeArray.length - 1) {
-                                workoutRoutes.put(climbNumber, topRopeGradeArray[baselineIndex]);
+                            if (UserInput.getBaseLineIndex() == UserInput.topRopeGradeArray.length - 1) {
+                                workoutRoutes.put(climbNumber, UserInput.topRopeGradeArray[UserInput.getBaseLineIndex()]);
                                 climbNumber++;
-                            } else if (baselineIndex == (topRopeGradeArray.length - 2)) {
+                            } else if (UserInput.getBaseLineIndex() == (UserInput.topRopeGradeArray.length - 2)) {
                                 int randomNumber = new Random().nextInt(2);
                                 if (randomNumber == 0) {
-                                    workoutRoutes.put(climbNumber, topRopeGradeArray[baselineIndex]);
+                                    workoutRoutes.put(climbNumber, UserInput.topRopeGradeArray[UserInput.getBaseLineIndex()]);
                                 } else {
-                                    workoutRoutes.put(climbNumber, topRopeGradeArray[baselineIndex + 1]);
+                                    workoutRoutes.put(climbNumber, UserInput.topRopeGradeArray[UserInput.getBaseLineIndex() + 1]);
                                 }
                                 climbNumber++;
                             } else {
                                 int randomNumber = new Random().nextInt(3);
                                 if (randomNumber == 0) {
-                                    workoutRoutes.put(climbNumber, topRopeGradeArray[baselineIndex]);
+                                    workoutRoutes.put(climbNumber, UserInput.topRopeGradeArray[UserInput.getBaseLineIndex()]);
                                 } else if (randomNumber == 1) {
-                                    workoutRoutes.put(climbNumber, topRopeGradeArray[baselineIndex + 1]);
+                                    workoutRoutes.put(climbNumber, UserInput.topRopeGradeArray[UserInput.getBaseLineIndex() + 1]);
                                 } else {
-                                    workoutRoutes.put(climbNumber, topRopeGradeArray[baselineIndex + 2]);
+                                    workoutRoutes.put(climbNumber, UserInput.topRopeGradeArray[UserInput.getBaseLineIndex() + 2]);
                                 }
                                 climbNumber++;
                             }
                         }
                     } else if (UserInput.getClimbType() == 2) {
-                        int baselineIndex = Arrays.asList(boulderGradeArray).indexOf(UserInput.getBaseLine());
                         int climbNumber = 1;
                         for (int i = 1; i <= UserInput.getRouteNumber(); i++) {
-                            if (baselineIndex == boulderGradeArray.length - 1) {
-                                workoutRoutes.put(climbNumber, boulderGradeArray[baselineIndex]);
+                            if (UserInput.getBaseLineIndex() == UserInput.boulderGradeArray.length - 1) {
+                                workoutRoutes.put(climbNumber, UserInput.boulderGradeArray[UserInput.getBaseLineIndex()]);
                                 climbNumber++;
-                            } else if (baselineIndex >= (boulderGradeArray.length - 2)) {
+                            } else if (UserInput.getBaseLineIndex() >= (UserInput.boulderGradeArray.length - 2)) {
                                 int randomNumber = new Random().nextInt(2);
                                 if (randomNumber == 0) {
-                                    workoutRoutes.put(climbNumber, boulderGradeArray[baselineIndex]);
+                                    workoutRoutes.put(climbNumber, UserInput.boulderGradeArray[UserInput.getBaseLineIndex()]);
                                 } else {
-                                    workoutRoutes.put(climbNumber, boulderGradeArray[baselineIndex + 1]);
+                                    workoutRoutes.put(climbNumber, UserInput.boulderGradeArray[UserInput.getBaseLineIndex() + 1]);
                                 }
                                 climbNumber++;
                             } else {
                                 int randomNumber = new Random().nextInt(3);
                                 if (randomNumber == 0) {
-                                    workoutRoutes.put(climbNumber, boulderGradeArray[baselineIndex]);
+                                    workoutRoutes.put(climbNumber, UserInput.boulderGradeArray[UserInput.getBaseLineIndex()]);
                                 } else if (randomNumber == 1) {
-                                    workoutRoutes.put(climbNumber, boulderGradeArray[baselineIndex + 1]);
+                                    workoutRoutes.put(climbNumber, UserInput.boulderGradeArray[UserInput.getBaseLineIndex() + 1]);
                                 } else {
-                                    workoutRoutes.put(climbNumber, boulderGradeArray[baselineIndex + 2]);
+                                    workoutRoutes.put(climbNumber, UserInput.boulderGradeArray[UserInput.getBaseLineIndex() + 2]);
                                 }
                                 climbNumber++;
                             }
