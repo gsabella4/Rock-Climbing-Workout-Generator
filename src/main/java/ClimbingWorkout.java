@@ -224,8 +224,8 @@ public class ClimbingWorkout {
                     UserOutput.outroDisplay();
                     workoutOutput.println("\nToday's Date: " + LocalDate.now() + "\n" + UserInput.logClimbType() + "\nBaseline: " + UserInput.getBaseLine() + "\nWorkout Type: " + UserInput.logWorkoutIntensity() + "\nYour workout: ");
                     for (Map.Entry<Integer, String> entry : workoutRoutes.entrySet()) {
-                        System.out.printf(UserOutput.workoutPrintFormat(), entry.getKey(), entry.getValue());
-                        workoutOutput.printf(UserOutput.workoutTextFileFormat(), entry.getKey(), entry.getValue());
+                        System.out.printf("\t\t\t  " + UserOutput.workoutPrintFormat(), entry.getKey(), entry.getValue());
+                        workoutOutput.printf(UserOutput.workoutPrintFormat(), entry.getKey(), entry.getValue());
                     }
                 } catch (FileNotFoundException e) {
                     System.out.println("File not found");

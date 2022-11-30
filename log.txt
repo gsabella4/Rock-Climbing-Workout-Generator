@@ -1,120 +1,37 @@
-Today's Date: 2022-11-22
-Top-Rope
-Baseline: 5.9
-Workout Type: Normal
-Your workout: 
-Climb#  1  :  5.8              
-Climb#  2  :  5.7              
-Climb#  3  :  10a              
-Climb#  4  :  5.7              
-Climb#  5  :  5.8              
-Climb#  6  :  5.8              
-Climb#  7  :  5.9              
-Climb#  8  :  5.8              
-Climb#  9  :  5.9              
-Climb# 10  :  10a              
-
-Today's Date: 2022-11-22
-Bouldering
-Baseline: V1
-Workout Type: Full Send
-Your workout: 
-Climb#  1  :  V3               
-Climb#  2  :  V3               
-Climb#  3  :  V2               
-Climb#  4  :  V3               
-Climb#  5  :  V2
-
-Today's Date: 2022-11-28
+Today's Date: 2022-11-30
 Top-Rope
 Baseline: 5.9
 Workout Type: Normal
 Your workout: 
 Climb#  1  :  5.7              
-Climb#  2  :  5.9              
+Climb#  2  :  5.7              
 Climb#  3  :  5.7              
-Climb#  4  :  5.9              
-Climb#  5  :  5.8              
-Climb#  6  :  10a              
-Climb#  7  :  5.8
-
-Today's Date: 2022-11-28
-Top-Rope
-Baseline: 5.9
-Workout Type: Full Send
-Your workout: 
-Climb#  1  :  10b              
-Climb#  2  :  10a              
-Climb#  3  :  10a              
-Climb#  4  :  10b              
-Climb#  5  :  5.9              
-
-Today's Date: 2022-11-28
-Top-Rope
-Baseline: 5.5
-Workout Type: Normal
-Your workout: 
-Climb#  1  :  5.6              
-Climb#  2  :  5.5              
-Climb#  3  :  5.5              
-Climb#  4  :  5.6              
-Climb#  5  :  5.6              
-
-Today's Date: 2022-11-28
-Top-Rope
-Baseline: 12d
-Workout Type: Normal
-Your workout: 
-Climb#  1  :  12c              
-Climb#  2  :  12d              
-Climb#  3  :  12d              
-Climb#  4  :  12c              
-Climb#  5  :  12d              
-
-Today's Date: 2022-11-28
-Top-Rope
-Baseline: 12d
-Workout Type: Full Send
-Your workout: 
-Climb#  1  :  12d              
-Climb#  2  :  12d              
-Climb#  3  :  12d              
-Climb#  4  :  12d              
-Climb#  5  :  12d              
-
-Today's Date: 2022-11-28
-Bouldering
-Baseline: V10
-Workout Type: Full Send
-Your workout: 
-Climb#  1  :  V10              
-Climb#  2  :  V10              
-Climb#  3  :  V10              
-Climb#  4  :  V10              
-Climb#  5  :  V10                
-
-Today's Date: 2022-11-28
-Top-Rope
-Baseline: 5.8
-Workout Type: Full Send
-Your workout: 
-Climb#  1  :  5.9              
-Climb#  2  :  5.8              
-Climb#  3  :  5.9              
-Climb#  4  :  5.9              
+Climb#  4  :  5.7              
 Climb#  5  :  10a              
 Climb#  6  :  5.8              
-Climb#  7  :  5.9              
-Climb#  8  :  5.9              
-Climb#  9  :  5.9              
+Climb#  7  :  5.8              
+Climb#  8  :  5.7              
+Climb#  9  :  10a              
 Climb# 10  :  5.9              
 
-Today's Date: 2022-11-28
+Today's Date: 2022-11-30
 Bouldering
-Baseline: V1
+Baseline: V4
+Workout Type: Full Send
+Your workout: 
+Climb#  1  :  V5               
+Climb#  2  :  V6               
+Climb#  3  :  V4               
+Climb#  4  :  V5               
+Climb#  5  :  V6               
+Climb#  6  :  V4               
+Climb#  7  :  V5               
+
+Today's Date: 2022-11-30
+Bouldering
+Baseline: V0
 Workout Type: Normal
 Your workout: 
-Climb#  1  :  V0               
-Climb#  2  :  V0               
-Climb#  3  :  V2               
-Climb#  4  :  V0               
+Climb#  1  :  V1               
+Climb#  2  :  V1               
+Climb#  3  :  V0               

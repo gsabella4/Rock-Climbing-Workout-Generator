@@ -17,7 +17,7 @@ public class UserOutput {
     }
 
     public static void numberOfSendsPrompt(){
-        System.out.print("\nHow many routes would you like to send today?  ");
+        System.out.print("\nHow many routes would you like to climb today?  ");
     }
 
     public static void climbTypeMenu(){
@@ -31,7 +31,7 @@ public class UserOutput {
     }
 
     public static void workoutIntensityMenu(){
-        System.out.println("\nPlease select your workout type");
+        System.out.println("\nPlease select your workout type (Choose Full Send to push your limits)");
         System.out.println("Enter 1 for Normal");
         System.out.println("Enter 2 for Full Send");
     }
@@ -50,10 +50,6 @@ public class UserOutput {
     }
 
     public static String workoutPrintFormat(){
-        return "\t\t\t  Climb# %2s  :  %-17s\n";
-    }
-
-    public static String workoutTextFileFormat(){
         return "Climb# %2s  :  %-17s\n";
     }
 
@@ -63,6 +59,6 @@ public class UserOutput {
 
     public static void goodbyeMessage(){
         System.out.println("\n          Don't forget your chalk!         ");
-        System.out.println("\n☆彡*ー*★彡*ー*☆彡 Goodbye ☆彡*ー*★彡*ー*☆彡");
+        System.out.println("\n ☆彡*ー*★彡*ー*☆彡 Goodbye ☆彡*ー*★彡*ー*☆彡");
     }
 }
