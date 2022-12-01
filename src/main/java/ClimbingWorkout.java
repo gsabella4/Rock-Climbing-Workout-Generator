@@ -14,14 +14,15 @@ public class ClimbingWorkout {
             // DONE --- options to calc another workout or exit
             // DONE --- include workout type, climb type, baseline details on log output
             // DONE - exception handling for input type checks
-            // ---- # of routes Exception - DONE
-            // ---- climb type - DONE
-            // ---- workout type - DONE
-            // ---- baseline input customer exception - DONE
-            // ---- can try/catch return back to specific menu? returns to home currently
-            // - Make sense to store top-rope/boulder grades in list vs Array?
+            // ----- # of routes Exception - DONE
+            // ----- climb type - DONE
+            // ----- workout type - DONE
+            // ----- baseline input customer exception - DONE
+            // ----- can try/catch return back to specific menu? returns to home currently
+            // --- ask user for a file to log workout to
+            // --- store grades in List vs Array, eliminate need to (Arrays.asList) in certain methods
 
-            //Map to hold climb# and route grade, will loop through at the end to display workout to the user.
+            //Map to hold climb# and route grade, will loop through later to display workout to the user.
             Map<Integer, String> workoutRoutes = new HashMap<>();
 
 
@@ -74,6 +75,8 @@ public class ClimbingWorkout {
                         int climbNumber = 1;
                         for (int i = 1; i <= UserInput.getRouteNumber(); i++) {/*Climbing grades are exponentially difficult, if user's baseline is among
                                               the first 2 grades, the workout can include -1 baseline at the easiest unless baseline is the lowest grade*/
+
+                            //if baseline is at index 0 of grades. Climbs will be baseline, baseline++ (avoids index out of bounds)
                             if (UserInput.getBaseLineIndex() == 0) {
                                 int randomNumber = new Random().nextInt(2);
                                 if (randomNumber == 0) {
@@ -82,7 +85,8 @@ public class ClimbingWorkout {
                                     workoutRoutes.put(climbNumber, UserInput.topRopeGradeArray[UserInput.getBaseLineIndex() + 1]);
                                 }
                                 climbNumber++;
-                            } else if (UserInput.getBaseLineIndex() <= 2) {
+                                //if baseline is between index 1 and 3, grades will be baseline--, baseline, baseline++
+                            } else if (UserInput.getBaseLineIndex() <= 3) {
                                 int randomNumber = new Random().nextInt(3);
                                 if (randomNumber == 0) {
                                     workoutRoutes.put(climbNumber, UserInput.topRopeGradeArray[UserInput.getBaseLineIndex() - 1]);
@@ -92,6 +96,7 @@ public class ClimbingWorkout {
                                     workoutRoutes.put(climbNumber, UserInput.topRopeGradeArray[UserInput.getBaseLineIndex() + 1]);
                                 }
                                 climbNumber++;
+                                //if baseline is at last index of grade, workout will never go for baseline + 1, to avoid index out of bounds.
                             } else if (UserInput.getBaseLineIndex() == UserInput.topRopeGradeArray.length - 1) {
                                 int randomNumber = new Random().nextInt(3);
                                 if (randomNumber == 0) {
@@ -103,6 +108,7 @@ public class ClimbingWorkout {
                                 }
                                 climbNumber++;
                             } else {
+                                //workout will include grades: baseline-2, baseline--, baseline, baseline++
                                 int randomNumber = new Random().nextInt(4);
                                 if (randomNumber == 0) {
                                     workoutRoutes.put(climbNumber, UserInput.topRopeGradeArray[UserInput.getBaseLineIndex() - 2]);
@@ -120,6 +126,8 @@ public class ClimbingWorkout {
                         int climbNumber = 1;
                         for (int i = 1; i <= UserInput.getRouteNumber(); i++) {/*Climbing grades are exponentially difficult, if user's baseline is among
                                               the first 2 grades, the workout can include -1 baseline at the easiest unless baseline is the lowest grade*/
+
+                            //if baseline is at index 0 of grades. Climbs will be baseline, baseline++ (avoids index out of bounds)
                             if (UserInput.getBaseLineIndex() == 0) {
                                 int randomNumber = new Random().nextInt(2);
                                 if (randomNumber == 0) {
@@ -128,7 +136,8 @@ public class ClimbingWorkout {
                                     workoutRoutes.put(climbNumber, UserInput.boulderGradeArray[UserInput.getBaseLineIndex() + 1]);
                                 }
                                 climbNumber++;
-                            } else if (UserInput.getBaseLineIndex() <= 2) {
+                                //if baseline is between index 1 and 3, grades will be baseline--, baseline, baseline++
+                            } else if (UserInput.getBaseLineIndex() <= 3) {
                                 int randomNumber = new Random().nextInt(3);
                                 if (randomNumber == 0) {
                                     workoutRoutes.put(climbNumber, UserInput.boulderGradeArray[UserInput.getBaseLineIndex() - 1]);
@@ -138,6 +147,7 @@ public class ClimbingWorkout {
                                     workoutRoutes.put(climbNumber, UserInput.boulderGradeArray[UserInput.getBaseLineIndex() + 1]);
                                 }
                                 climbNumber++;
+                                //if baseline is at last index of grade, workout will never go for baseline + 1, to avoid index out of bounds.
                             } else if (UserInput.getBaseLineIndex() == (UserInput.boulderGradeArray.length - 1)) {
                                 int randomNumber = new Random().nextInt(3);
                                 if (randomNumber == 0) {
@@ -149,6 +159,7 @@ public class ClimbingWorkout {
                                 }
                                 climbNumber++;
                             } else {
+                                //workout will include grades: baseline-2, baseline--, baseline, baseline++
                                 int randomNumber = new Random().nextInt(4);
                                 if (randomNumber == 0) {
                                     workoutRoutes.put(climbNumber, UserInput.boulderGradeArray[UserInput.getBaseLineIndex() - 2]);
@@ -167,9 +178,11 @@ public class ClimbingWorkout {
                     if (UserInput.getClimbType() == 1) {
                         int climbNumber = 1;
                         for (int i = 1; i <= UserInput.getRouteNumber(); i++) {
+                            //if baseline is at last index of grade, workout will never go for baseline + 1, to avoid index out of bounds.
                             if (UserInput.getBaseLineIndex() == UserInput.topRopeGradeArray.length - 1) {
                                 workoutRoutes.put(climbNumber, UserInput.topRopeGradeArray[UserInput.getBaseLineIndex()]);
                                 climbNumber++;
+                                //if baseline is at grade array length - 2 , workout will never go for baseline + 2, to avoid index out of bounds.
                             } else if (UserInput.getBaseLineIndex() == (UserInput.topRopeGradeArray.length - 2)) {
                                 int randomNumber = new Random().nextInt(2);
                                 if (randomNumber == 0) {
@@ -179,6 +192,7 @@ public class ClimbingWorkout {
                                 }
                                 climbNumber++;
                             } else {
+                                //workout will include grades: baseline, baseline++, baseline+2
                                 int randomNumber = new Random().nextInt(3);
                                 if (randomNumber == 0) {
                                     workoutRoutes.put(climbNumber, UserInput.topRopeGradeArray[UserInput.getBaseLineIndex()]);
@@ -193,9 +207,11 @@ public class ClimbingWorkout {
                     } else if (UserInput.getClimbType() == 2) {
                         int climbNumber = 1;
                         for (int i = 1; i <= UserInput.getRouteNumber(); i++) {
+                            //if baseline is at last index of grade, workout will never go for baseline + 1, to avoid index out of bounds.
                             if (UserInput.getBaseLineIndex() == UserInput.boulderGradeArray.length - 1) {
                                 workoutRoutes.put(climbNumber, UserInput.boulderGradeArray[UserInput.getBaseLineIndex()]);
                                 climbNumber++;
+                                //if baseline is at grade array length - 2 , workout will never go for baseline + 2, to avoid index out of bounds.
                             } else if (UserInput.getBaseLineIndex() >= (UserInput.boulderGradeArray.length - 2)) {
                                 int randomNumber = new Random().nextInt(2);
                                 if (randomNumber == 0) {
@@ -205,6 +221,7 @@ public class ClimbingWorkout {
                                 }
                                 climbNumber++;
                             } else {
+                                //workout will include grades: baseline, baseline++, baseline+2
                                 int randomNumber = new Random().nextInt(3);
                                 if (randomNumber == 0) {
                                     workoutRoutes.put(climbNumber, UserInput.boulderGradeArray[UserInput.getBaseLineIndex()]);
