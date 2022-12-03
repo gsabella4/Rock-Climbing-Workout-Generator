@@ -43,7 +43,7 @@ public class UserInput {
                     baseline = baseline.toLowerCase();
                 }
                 else {
-                    throw new InvalidGradeException("\n\tYou must enter a valid top-rope grade! Returning back to home.");
+                    throw new InvalidGradeException("\n\tYou must enter a valid top-rope grade! Try again.");
                 }
             }
          else if (climbType == 2) {
@@ -52,7 +52,7 @@ public class UserInput {
                 baseline = baseline.toUpperCase();
             }
                 else {
-                    throw new InvalidGradeException("\n\tYou must enter a valid Boulder grade! Returning back to home.");
+                    throw new InvalidGradeException("\n\tYou must enter a valid Boulder grade! Try again.");
                 }
             }
         baseLineValue = baseline;

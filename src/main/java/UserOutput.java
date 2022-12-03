@@ -31,7 +31,7 @@ public class UserOutput {
     }
 
     public static void workoutIntensityMenu(){
-        System.out.println("\nPlease select your workout type (Choose Full Send to push your limits)");
+        System.out.println("\nPlease select your workout type: (Choose Full Send to push your limits)");
         System.out.println("Enter 1 for Normal");
         System.out.println("Enter 2 for Full Send");
     }
@@ -41,12 +41,8 @@ public class UserOutput {
         System.out.println("\t☺・☻・☺・☻・☺・☻・☺・☻・☺・☻・☺・☻\n");
     }
 
-    public static void invalidNumberOfRoutesOutput(){
-        System.out.println("\n\t\tInvalid Input! Please enter a whole Number\n\n");
-    }
-
     public static void invalidInputMessage(){
-        System.out.println("\n\t\tInvalid Input! Back to Home, and try again.\n\n");
+        System.out.println("\n\tInvalid Input! try again.");
     }
 
     public static String workoutPrintFormat(){
