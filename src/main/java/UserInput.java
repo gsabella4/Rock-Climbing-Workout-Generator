@@ -27,7 +27,13 @@ public class UserInput {
 
     public static void climbTypeInput(){
         String climbTypeString = userInput.nextLine();
-        climbType = Integer.parseInt(climbTypeString);
+        if (climbTypeString.equals("1") || climbTypeString.equals("2")){
+            climbType = Integer.parseInt(climbTypeString);
+        }
+        else {
+            throw new IllegalArgumentException();
+        }
+
     }
 
     public static int getClimbType(){
@@ -75,7 +81,12 @@ public class UserInput {
 
     public static void workoutIntensityInput(){
         String workoutIntensityString = userInput.nextLine();
-        workoutIntensity = Integer.parseInt(workoutIntensityString);
+        if (workoutIntensityString.equals("1") || workoutIntensityString.equals("2")){
+            workoutIntensity = Integer.parseInt(workoutIntensityString);
+        }
+        else {
+            throw new IllegalArgumentException();
+        }
     }
 
     public static int getWorkoutIntensity(){
@@ -110,6 +121,8 @@ public class UserInput {
         } else if (response.equalsIgnoreCase("N")) {
             UserOutput.goodbyeMessage();
             System.exit(1);
+        } else {
+            throw new IllegalArgumentException();
         }
     }
 }
